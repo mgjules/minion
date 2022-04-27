@@ -14,7 +14,6 @@ import (
 	"github.com/mgjules/minion/minion"
 	"github.com/mgjules/minion/tracer"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
-	"go.uber.org/fx"
 )
 
 const (
@@ -22,12 +21,6 @@ const (
 	_writeTimeout      = 2 * time.Second
 	_idleTimeout       = 30 * time.Second
 	_readHeaderTimeout = 2 * time.Second
-)
-
-// Module exported for initialising a new Server and Client.
-var Module = fx.Options(
-	fx.Provide(NewServer),
-	fx.Provide(NewClient),
 )
 
 // Server is the main HTTP server.

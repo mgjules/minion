@@ -4,13 +4,6 @@ import (
 	"fmt"
 	"runtime/debug"
 	"time"
-
-	"go.uber.org/fx"
-)
-
-// Module exported for initialising a new build Info.
-var Module = fx.Options(
-	fx.Provide(New),
 )
 
 // Info contains the information about the build.
