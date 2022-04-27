@@ -18,8 +18,8 @@ func init() {
 
 		fmt.Fprintf(
 			c.App.Writer,
-			"Revision: %v\nLast Commit: %v\nBuild time: %v\nDirty Build: %v\n",
-			info.Revision, info.LastCommit, c.App.Compiled, info.DirtyBuild,
+			"Revision: %v\nGo Version: %v\nLast Commit: %v\nDirty Build: %v\n",
+			info.Revision, info.GoVersion, info.LastCommit, info.DirtyBuild,
 		)
 	}
 }

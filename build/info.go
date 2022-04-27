@@ -16,6 +16,7 @@ var Module = fx.Options(
 // Info contains the information about the build.
 type Info struct {
 	Revision   string    `json:"revision"`
+	GoVersion  string    `json:"go_version"`
 	LastCommit time.Time `json:"last_commit"`
 	DirtyBuild bool      `json:"dirty_build"`
 }
@@ -29,6 +30,7 @@ func New() (*Info, error) {
 
 	info := Info{
 		Revision:   "n/a",
+		GoVersion:  bi.GoVersion,
 		LastCommit: time.Time{},
 		DirtyBuild: false,
 	}

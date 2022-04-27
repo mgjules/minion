@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"time"
 
 	"github.com/mgjules/minion/cmd"
 	"github.com/urfave/cli/v2"
@@ -23,7 +22,6 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "Minion"
 	app.Description = "A little minion that can be replicated to create more minions."
-	app.Compiled = time.Now()
 	app.Authors = []*cli.Author{
 		{
 			Name:  "Michaël Giovanni Jules",

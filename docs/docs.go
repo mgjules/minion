@@ -98,6 +98,9 @@ const docTemplate = `{
                 "dirty_build": {
                     "type": "boolean"
                 },
+                "go_version": {
+                    "type": "string"
+                },
                 "last_commit": {
                     "type": "string"
                 },
