@@ -70,7 +70,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/version": {
+        "/version": {
             "get": {
                 "description": "checks the server's version",
                 "produces": [

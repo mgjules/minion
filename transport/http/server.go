@@ -93,15 +93,15 @@ func (s *Server) registerRoutes() {
 	// Health Check
 	s.router.GET("/", s.handleHealthCheck())
 
+	// Version
+	s.router.GET("/version", s.handleVersion())
+
 	// Swagger
 	s.router.GET("/swagger/*any", s.handleSwagger())
 
 	api := s.router.Group("/api")
 	api.Use(otelgin.Middleware("main"))
 	{
-		// Version
-		api.GET("/version", s.handleVersion())
-
 		// Minion
 		minion := api.Group("/minion")
 		{

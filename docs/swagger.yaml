@@ -73,7 +73,7 @@ paths:
       summary: Minion introduction
       tags:
       - core
-  /api/version:
+  /version:
     get:
       description: checks the server's version
       produces:

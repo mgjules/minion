@@ -40,7 +40,7 @@ func (s *Server) handleHealthCheck() gin.HandlerFunc {
 // @Tags         core
 // @Produce      json
 // @Success      200  {object}  build.Info
-// @Router       /api/version [get]
+// @Router       /version [get]
 func (s *Server) handleVersion() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.JSON(http.StatusOK, s.build)
