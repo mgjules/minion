@@ -30,7 +30,7 @@ A little minion (i.e microservice) that can be replicated to create more minions
 
 ## About the project
 
-Minion was created to simplify the creation of microservices. It is a lightweight and opinionated. 
+Minion was created to simplify the creation of microservices. It is lightweight and opinionated. 
 
 Some of technologies used in this project are:
 
