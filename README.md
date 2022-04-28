@@ -6,10 +6,15 @@
 
 A little minion (i.e microservice) that can be replicated to create more minions. 
 
+
 ## Contents
+
   - [Requirements](#requirements)
   - [Usage](#usage)
+  - [About the project](#about-the-project)
   - [License](#license)
+  - [Stability](#stability)
+
 
 ## Requirements
 
@@ -28,6 +33,7 @@ A little minion (i.e microservice) that can be replicated to create more minions
 
 3. Replace the package `minion` with your business logic.
 
+
 ## About the project
 
 Minion was created to simplify the creation of microservices. It is lightweight and opinionated. 
@@ -44,9 +50,11 @@ Some of technologies used in this project are:
 - [gin](https://github.com/gin-gonic/gin) - HTTP web framework.
 - [resty](https://github.com/go-resty/resty) - HTTP client.
 
+
 ## License
 
 Minion is Apache 2.0 licensed.
+
 
 ## Stability
 
