@@ -83,7 +83,6 @@ var serve = &cli.Command{
 		host := c.String("http-server-host")
 		port := c.Int("http-server-port")
 		jaegerEndpoint := c.String("jaeger-endpoint")
-
 		key := c.String("minion-key")
 
 		logger, err := logger.New(prod)
