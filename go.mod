@@ -17,7 +17,7 @@ require (
 	github.com/onsi/ginkgo/v2 v2.7.0
 	github.com/onsi/gomega v1.25.0
 	github.com/swaggo/gin-swagger v1.3.0
-	github.com/swaggo/swag v1.8.0
+	github.com/swaggo/swag v1.8.10
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.1.18
 	github.com/urfave/cli/v2 v2.23.7
 	go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin v0.31.0
