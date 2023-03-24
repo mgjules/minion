@@ -1,30 +1,38 @@
 package tracer
 
 import (
+	"context"
+	"errors"
+	"fmt"
+	"time"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/exporters/jaeger"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
-	"go.opentelemetry.io/otel/trace"
+	"google.golang.org/grpc"
 )
 
-// Tracer is a simple wrapper around trace.Tracer.
-type Tracer struct {
-	trace.Tracer
-}
+// Setup setups the OpenTelemetry metric exporter & provider.
+// Returns a cleanup function.
+func Setup(ctx context.Context, prod bool, service, otlpEndpoint string) (func() error, error) {
+	if otlpEndpoint == "" {
+		return nil, errors.New("OTLP endpoint must not be empty")
+	}
 
-// New returns a new Tracer.
-func New(prod bool, name, jaegerEndpoint string) (*Tracer, error) {
-	exporter, err := jaeger.New(
-		jaeger.WithCollectorEndpoint(
-			jaeger.WithEndpoint(jaegerEndpoint),
-		),
-	)
+	client := otlptracegrpc.NewClient(
+		otlptracegrpc.WithInsecure(),
+		otlptracegrpc.WithEndpoint(otlpEndpoint),
+		otlptracegrpc.WithDialOption(grpc.WithBlock()))
+	sctx, cancel := context.WithTimeout(ctx, time.Second)
+	defer cancel()
+	exporter, err := otlptrace.New(sctx, client)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("new trace exporter: %w", err)
 	}
 
 	env := "development"
@@ -32,21 +40,38 @@ func New(prod bool, name, jaegerEndpoint string) (*Tracer, error) {
 		env = "production"
 	}
 
-	tp := sdktrace.NewTracerProvider(
-		sdktrace.WithSampler(sdktrace.AlwaysSample()),
-		sdktrace.WithBatcher(exporter),
-		sdktrace.WithResource(resource.NewWithAttributes(
-			semconv.SchemaURL,
-			semconv.ServiceNameKey.String(name),
+	res, err := resource.New(ctx,
+		resource.WithProcess(),
+		resource.WithTelemetrySDK(),
+		resource.WithHost(),
+		resource.WithAttributes(
+			semconv.ServiceNameKey.String(service),
 			attribute.String("environment", env),
-		)),
+		),
 	)
-	otel.SetTracerProvider(tp)
+	if err != nil {
+		return nil, fmt.Errorf("new resource: %w", err)
+	}
+
+	provider := sdktrace.NewTracerProvider(
+		sdktrace.WithSampler(sdktrace.AlwaysSample()),
+		sdktrace.WithResource(res),
+		sdktrace.WithBatcher(exporter),
+	)
+
+	otel.SetTracerProvider(provider)
 	otel.SetTextMapPropagator(
 		propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}),
 	)
 
-	return &Tracer{
-		otel.Tracer(name),
+	return func() error {
+		newCtx, cancel := context.WithTimeout(context.Background(), time.Second)
+		defer cancel()
+
+		if err := provider.Shutdown(newCtx); err != nil {
+			return fmt.Errorf("shutdown trace provider: %w", err)
+		}
+
+		return nil
 	}, nil
 }

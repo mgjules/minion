@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package words;
+option go_package = "github.com/mgjules/minion/internal/protobuf/words";
+
+import "google/api/annotations.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Words";
+    version: "0.1.0";
+    contact: {
+      name: "Michaël Giovanni Jules";
+      url: "https://mgjules.dev";
+      email: "hi@mgjules.dev";
+    };
+  };
+};
+
+service WordsService {
+  rpc AddWord(AddWordRequest) returns (AddWordResponse) {
+    option (google.api.http) = {
+      post: "/v1/words"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      summary: "Add word"
+      description: "Add a new word."
+    };
+  }
+  rpc RandomWord(RandomWordRequest) returns (RandomWordResponse) {
+    option (google.api.http) = {
+      get: "/v1/words/random"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      summary: "Random word"
+      description: "Retrieve a randomly selected word."
+    };
+  }
+  rpc SearchWord(SearchWordRequest) returns (SearchWordResponse) {
+    option (google.api.http) = {
+      get: "/v1/words/search"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      summary: "Search word"
+      description: "Search for all words that have the content of the query argument as prefix."
+    };
+  }
+}
+
+message AddWordRequest {
+  string word = 1;
+}
+
+message AddWordResponse {
+  int64 id = 1;
+  string word = 2;
+}
+
+message RandomWordRequest {}
+
+message RandomWordResponse {
+  int64 id = 1;
+  string word = 2;
+}
+
+message SearchWordRequest {
+  string query = 1;
+}
+
+message SearchWordResponse {
+  repeated string words = 1;
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}

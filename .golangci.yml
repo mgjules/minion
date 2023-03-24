@@ -85,7 +85,7 @@ linters-settings:
         skipTestFuncs: true
       rangeValCopy:
         # size in bytes that makes the warning trigger (default 128)
-        sizeThreshold: 32        # Comma-separated list of file paths containing ruleguard rules.
+        sizeThreshold: 32 # Comma-separated list of file paths containing ruleguard rules.
         skipTestFuncs: true
       ruleguard:
         # Enable debug to identify which 'Where' condition was rejected.
@@ -99,7 +99,7 @@ linters-settings:
         #   ruleguard prints the specific Where() condition that was rejected.
         #
         # The flag is passed to the ruleguard 'debug-group' argument.
-        debug: 'emptyDecl'
+        debug: "emptyDecl"
         # Deprecated, use 'failOn' param.
         # If set to true, identical to failOn='all', otherwise failOn=''
         failOnError: false
@@ -175,7 +175,7 @@ linters-settings:
     # Select the Go version to target. The default is '1.13'.
     go: "1.18"
     # https://staticcheck.io/docs/options#checks
-    checks: [ "all" ]
+    checks: ["all"]
 
   govet:
     # report about shadowed variables
@@ -257,7 +257,7 @@ linters-settings:
         severity: warning
         disable: false
         arguments:
-          - [ "call-chain", "loop", "method-call", "recover", "return" ]
+          - ["call-chain", "loop", "method-call", "recover", "return"]
       # https://github.com/mgechev/revive/blob/master/RULES_DESCRIPTIONS.md#dot-imports
       - name: dot-imports
         severity: warning
@@ -295,13 +295,13 @@ linters-settings:
         severity: warning
         disable: false
         arguments:
-        - "checkPrivateReceivers"
-        - "sayRepetitiveInsteadOfStutters"
+          - "checkPrivateReceivers"
+          - "sayRepetitiveInsteadOfStutters"
       # https://github.com/mgechev/revive/blob/master/RULES_DESCRIPTIONS.md#function-result-limit
       - name: function-result-limit
         severity: warning
         disable: false
-        arguments: [ 4 ]
+        arguments: [4]
       # https://github.com/mgechev/revive/blob/master/RULES_DESCRIPTIONS.md#get-return
       - name: get-return
         severity: warning
@@ -326,7 +326,7 @@ linters-settings:
       - name: line-length-limit
         severity: warning
         disable: false
-        arguments: [ 120 ]
+        arguments: [120]
       # https://github.com/mgechev/revive/blob/master/RULES_DESCRIPTIONS.md#modifies-value-receiver
       - name: modifies-value-receiver
         severity: warning
@@ -412,20 +412,60 @@ linters-settings:
     # Select the Go version to target. The default is '1.13'.
     go: "1.18"
     # https://staticcheck.io/docs/options#checks
-    checks: [ "all" ]
+    checks: ["all"]
 
   stylecheck:
     # Select the Go version to target. The default is '1.13'.
     go: "1.18"
     # https://staticcheck.io/docs/options#checks
-    checks: [ "all", "-ST1000", "-ST1003", "-ST1016", "-ST1020", "-ST1021", "-ST1022" ]
+    checks:
+      ["all", "-ST1000", "-ST1003", "-ST1016", "-ST1020", "-ST1021", "-ST1022"]
     # https://staticcheck.io/docs/options#dot_import_whitelist
     dot-import-whitelist:
       - fmt
     # https://staticcheck.io/docs/options#initialisms
-    initialisms: [ "ACL", "API", "ASCII", "CPU", "CSS", "DNS", "EOF", "GUID", "HTML", "HTTP", "HTTPS", "ID", "IP", "JSON", "QPS", "RAM", "RPC", "SLA", "SMTP", "SQL", "SSH", "TCP", "TLS", "TTL", "UDP", "UI", "GID", "UID", "UUID", "URI", "URL", "UTF8", "VM", "XML", "XMPP", "XSRF", "XSS" ]
+    initialisms:
+      [
+        "ACL",
+        "API",
+        "ASCII",
+        "CPU",
+        "CSS",
+        "DNS",
+        "EOF",
+        "GUID",
+        "HTML",
+        "HTTP",
+        "HTTPS",
+        "ID",
+        "IP",
+        "JSON",
+        "QPS",
+        "RAM",
+        "RPC",
+        "SLA",
+        "SMTP",
+        "SQL",
+        "SSH",
+        "TCP",
+        "TLS",
+        "TTL",
+        "UDP",
+        "UI",
+        "GID",
+        "UID",
+        "UUID",
+        "URI",
+        "URL",
+        "UTF8",
+        "VM",
+        "XML",
+        "XMPP",
+        "XSRF",
+        "XSS",
+      ]
     # https://staticcheck.io/docs/options#http_status_code_whitelist
-    http-status-code-whitelist: [ "200", "400", "404", "500" ]
+    http-status-code-whitelist: ["200", "400", "404", "500"]
 
   thelper:
     # The following configurations enable all checks. It can be omitted because all checks are enabled by default.
@@ -457,61 +497,60 @@ linters-settings:
 linters:
   disable-all: true
   enable:
-   - deadcode
-   - errcheck
-   - gosimple
-   - govet
-   - ineffassign
-   - staticcheck
-   - structcheck
-   - typecheck
-   - unused
-   - varcheck
-   - bidichk
-   - bodyclose
-   - gocyclo
-   - dogsled
-   - dupl
-   - errname
-   - errorlint
-  #  - exhaustive
-   - exportloopref
-   - forcetypeassert
-   - gci
-   - gocognit
-   - goconst
-   - gocritic
-   - gofmt
-   - gofumpt
-  #  - gomnd
-   - goprintffuncname
-   - gosec
-   - ifshort
-   - makezero
-   - misspell
-   - nakedret
-   - nilerr
-   - nilnil
-   - nlreturn
-  #  - noctx 
-   - nolintlint
-   - paralleltest
-  #  - prealloc
-   - predeclared
-   - revive
-  #  - tagliatelle
-   - tenv
-  #  - testpackage
-   - thelper
-   - unconvert
-   - unparam
-  #  - varnamelen
-   - wastedassign
+    - deadcode
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - bidichk
+    - bodyclose
+    - gocyclo
+    - dogsled
+    - dupl
+    - errname
+    - errorlint
+    #  - exhaustive
+    - exportloopref
+    - forcetypeassert
+    - gci
+    - gocognit
+    - goconst
+    - gocritic
+    - gofmt
+    - gofumpt
+    #  - gomnd
+    - goprintffuncname
+    - gosec
+    - ifshort
+    - makezero
+    - misspell
+    - nakedret
+    - nilerr
+    - nilnil
+    - nlreturn
+    #  - noctx
+    - nolintlint
+    - paralleltest
+    #  - prealloc
+    - predeclared
+    - revive
+    #  - tagliatelle
+    - tenv
+    #  - testpackage
+    - thelper
+    - unconvert
+    - unparam
+    #  - varnamelen
+    - wastedassign
   #  - whitespace
   #  - wrapcheck
   #  - wsl
   fast: false
-
 
 issues:
   # Excluding configuration per-path, per-linter, per-text and per-source

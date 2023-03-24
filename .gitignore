@@ -20,3 +20,6 @@ bin/*
 
 # Environment variable
 .env
+
+# Bleve index paths
+*.bleve/
