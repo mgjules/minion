@@ -6,8 +6,8 @@ import (
 	"github.com/alexliesenfeld/health"
 	"github.com/gin-gonic/gin"
 	"github.com/mgjules/minion/docs"
+	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 // Success defines the structure for a successful response.
