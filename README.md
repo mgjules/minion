@@ -11,29 +11,29 @@ A little minion (i.e microservice) that can be replicated to create more minions
 - [minion](#minion)
   - [Contents](#contents)
   - [Requirements](#requirements)
-  - [Usage](#usage)
-  - [About the project](#about-the-project)
+  - [Architecture](#architecture)
+  - [The why](#the-why)
   - [License](#license)
   - [Stability](#stability)
 
 ## Requirements
 
-- [Go 1.18+](https://golang.org/doc/install)
+- [Go 1.20+](https://golang.org/doc/install)
 - [Mage](https://github.com/magefile/mage) - replacement for Makefile in Go.
 - [Golangci-lint](https://github.com/golangci/golangci-lint) - Fast Go linters runner.
 - [Ginkgo](https://github.com/onsi/ginkgo) - Esspressive testing framework.
 - [Docker](https://www.docker.com) - Containerization.
 - [Docker-compose](https://docs.docker.com/compose/install/) - Orchestration of containers.
 
-## Usage
+## Architecture
 
-1. Create a new repository using this one as a template.
+![Architecture](architecture.svg)
 
-2. Search and replace all lowercase instances of `minion` with the name of your new minion.
+Inter-microservice communication is handled using gRPC instead of REST due to its higher performance, smaller payload size and tighter API contract.
 
-3. Replace the package `minion` with your business logic.
+Both Go services are instrumented using [OpenTelemetry](https://opentelemetry.io/) and use environment variables for configuration. Traces, metrics and logs are sent using gRPC to an OpenTelemetry collector, which batches and exports them to a Jaeger and Prometheus service.
 
-## About the project
+## The why
 
 Minion was created to simplify the creation of microservices. It is lightweight and opinionated.
 

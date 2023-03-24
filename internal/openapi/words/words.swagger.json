@@ -1,0 +1,187 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Words",
+    "version": "0.1.0",
+    "contact": {
+      "name": "Michaël Giovanni Jules",
+      "url": "https://mgjules.dev",
+      "email": "hi@mgjules.dev"
+    }
+  },
+  "tags": [
+    {
+      "name": "WordsService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/words": {
+      "post": {
+        "summary": "Add word",
+        "description": "Add a new word.",
+        "operationId": "WordsService_AddWord",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/wordsAddWordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/wordsAddWordRequest"
+            }
+          }
+        ],
+        "tags": [
+          "WordsService"
+        ]
+      }
+    },
+    "/v1/words/random": {
+      "get": {
+        "summary": "Random word",
+        "description": "Retrieve a randomly selected word.",
+        "operationId": "WordsService_RandomWord",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/wordsRandomWordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "WordsService"
+        ]
+      }
+    },
+    "/v1/words/search": {
+      "get": {
+        "summary": "Search word",
+        "description": "Search for all words that have the content of the query argument as prefix.",
+        "operationId": "WordsService_SearchWord",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/wordsSearchWordResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WordsService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "wordsAddWordRequest": {
+      "type": "object",
+      "properties": {
+        "word": {
+          "type": "string"
+        }
+      }
+    },
+    "wordsAddWordResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "word": {
+          "type": "string"
+        }
+      }
+    },
+    "wordsRandomWordResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "word": {
+          "type": "string"
+        }
+      }
+    },
+    "wordsSearchWordResponse": {
+      "type": "object",
+      "properties": {
+        "words": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

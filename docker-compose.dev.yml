@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: ./cmd/gateway/Dockerfile
+    restart: unless-stopped
+    environment:
+      - GATEWAY_DEBUG=true
+      - GATEWAY_HOST=0.0.0.0
+      - GATEWAY_PORT=9000
+      - GATEWAY_OTEL_EXPORTER_OTLP_ENDPOINT=otel-collector:4317
+      - GATEWAY_WORDS_GRPC_ENDPOINT=words:9001
+    ports:
+      - "9000:9000"
+    networks:
+      - dev
+    depends_on:
+      - words
+      - otel-collector
+
+  words:
+    build:
+      context: .
+      dockerfile: ./cmd/words/Dockerfile
+    restart: unless-stopped
+    environment:
+      - WORDS_DEBUG=true
+      - WORDS_HOST=0.0.0.0
+      - WORDS_PORT=9001
+      - WORDS_OTEL_EXPORTER_OTLP_ENDPOINT=otel-collector:4317
+    networks:
+      - dev
+    depends_on:
+      - otel-collector
+
+  otel-collector:
+    image: otel/opentelemetry-collector:0.70.0
+    restart: unless-stopped
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./configs/otel-collector-config.local.yaml:/etc/otel-collector-config.yaml
+    networks:
+      - dev
+    depends_on:
+      - jaeger
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.41
+    restart: unless-stopped
+    ports:
+      - "16686:16686"
+    networks:
+      - dev
+  
+  prometheus:
+    image: prom/prometheus:v2.41.0
+    restart: unless-stopped
+    volumes:
+      - ./configs/prometheus.local.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - dev
+
+networks:
+  dev:

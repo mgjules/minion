@@ -1,0 +1,57 @@
+direction: right
+
+client: Client {
+  shape: person
+
+  style: {
+    multiple: true
+  }
+}
+
+subnet: Subnet {
+  gateway: Gateway {
+    shape: image
+    icon: "https://plugins.jetbrains.com/files/12875/130789/icon/pluginIcon.png"
+  }
+
+  words: Words {
+    shape: image
+    icon: "https://plugins.jetbrains.com/files/12875/130789/icon/pluginIcon.png"
+  }
+
+  otlp_collector: OTLP Collector {
+    shape: image
+    icon: "https://coralogix.com/wp-content/uploads/2022/02/opentelemetry-icon-color-1.png"
+  }
+
+  jaeger: Jaeger {
+    shape: image
+    icon: "https://www.jaegertracing.io/img/jaeger-icon-color.png"
+  }
+
+  prometheus: Prometheus {
+    shape: image
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/2066px-Prometheus_software_logo.svg.png"
+  }
+
+  style: {
+    stroke-dash: 1
+    border-radius: 3
+  }
+}
+
+client <-> subnet.gateway: HTTP {
+  style.animated: true
+}
+subnet.gateway <-> subnet.words: gRPC {
+  style.animated: true
+}
+subnet.gateway -> subnet.otlp_collector <- subnet.words: Traces, Metrics & Logs {
+  style.animated: true
+}
+subnet.otlp_collector -> subnet.jaeger: Traces {
+  style.animated: true
+}
+subnet.otlp_collector -- subnet.prometheus: Metrics {
+  style.animated: true
+}
