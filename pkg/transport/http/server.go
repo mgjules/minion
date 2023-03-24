@@ -8,11 +8,11 @@ import (
 
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
-	"github.com/mgjules/minion/build"
-	"github.com/mgjules/minion/health"
-	"github.com/mgjules/minion/logger"
-	"github.com/mgjules/minion/minion"
-	"github.com/mgjules/minion/tracer"
+	"github.com/mgjules/minion/internal/minion"
+	"github.com/mgjules/minion/pkg/build"
+	"github.com/mgjules/minion/pkg/health"
+	"github.com/mgjules/minion/pkg/logger"
+	"github.com/mgjules/minion/pkg/tracer"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 )
 

@@ -9,8 +9,8 @@ import (
 	"github.com/ThreeDotsLabs/watermill"
 	"github.com/ThreeDotsLabs/watermill/message"
 	"github.com/ThreeDotsLabs/watermill/message/router/middleware"
-	"github.com/mgjules/minion/health"
-	"github.com/mgjules/minion/logger"
+	"github.com/mgjules/minion/pkg/health"
+	"github.com/mgjules/minion/pkg/logger"
 )
 
 const (

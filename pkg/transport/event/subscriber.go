@@ -11,8 +11,8 @@ import (
 	"github.com/ThreeDotsLabs/watermill-amqp/v2/pkg/amqp"
 	"github.com/ThreeDotsLabs/watermill/message"
 	"github.com/ThreeDotsLabs/watermill/pubsub/gochannel"
-	"github.com/mgjules/minion/health"
-	"github.com/mgjules/minion/logger"
+	"github.com/mgjules/minion/pkg/health"
+	"github.com/mgjules/minion/pkg/logger"
 )
 
 // Subscriber is a wrapper for amqp.Subscriber.

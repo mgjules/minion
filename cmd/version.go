@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mgjules/minion/build"
+	"github.com/mgjules/minion/pkg/build"
 	"github.com/urfave/cli/v2"
 )
 

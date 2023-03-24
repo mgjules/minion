@@ -2,7 +2,7 @@ package http
 
 import (
 	"github.com/go-resty/resty/v2"
-	"github.com/mgjules/minion/json"
+	"github.com/mgjules/minion/pkg/json"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 )

@@ -1,6 +1,6 @@
 package http
 
-import "github.com/mgjules/minion/json"
+import "github.com/mgjules/minion/pkg/json"
 
 // Error represents a problem details object as described in RFC 7807.
 type Error struct {

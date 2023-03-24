@@ -1,7 +1,7 @@
 package minion_test
 
 import (
-	"github.com/mgjules/minion/minion"
+	"github.com/mgjules/minion/internal/minion"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
