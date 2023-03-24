@@ -16,7 +16,7 @@ require (
 	github.com/magefile/mage v1.14.0
 	github.com/onsi/ginkgo/v2 v2.9.2
 	github.com/onsi/gomega v1.27.5
-	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
+	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.5.3
 	github.com/swaggo/swag v1.8.11
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.1.21
