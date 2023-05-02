@@ -29,9 +29,9 @@ require (
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.37.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.14.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.14.0
-	go.opentelemetry.io/otel/metric v0.37.0
-	go.opentelemetry.io/otel/sdk v1.14.0
-	go.opentelemetry.io/otel/sdk/metric v0.37.0
+	go.opentelemetry.io/otel/metric v0.38.0
+	go.opentelemetry.io/otel/sdk v1.15.0
+	go.opentelemetry.io/otel/sdk/metric v0.38.0
 	go.opentelemetry.io/otel/trace v1.15.0
 	go.uber.org/zap v1.24.0
 	google.golang.org/genproto v0.0.0-20230323212658-478b75c54725
@@ -109,7 +109,7 @@ require (
 	golang.org/x/crypto v0.7.0 // indirect
 	golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 // indirect
 	golang.org/x/net v0.8.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/tools v0.7.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
