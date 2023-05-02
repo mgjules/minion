@@ -26,12 +26,12 @@ require (
 	go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin v0.40.0
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.40.0
 	go.opentelemetry.io/otel v1.15.0
-	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.37.0
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.38.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.14.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.14.0
-	go.opentelemetry.io/otel/metric v0.37.0
-	go.opentelemetry.io/otel/sdk v1.14.0
-	go.opentelemetry.io/otel/sdk/metric v0.37.0
+	go.opentelemetry.io/otel/metric v0.38.0
+	go.opentelemetry.io/otel/sdk v1.15.0
+	go.opentelemetry.io/otel/sdk/metric v0.38.0
 	go.opentelemetry.io/otel/trace v1.15.0
 	go.uber.org/zap v1.24.0
 	google.golang.org/genproto v0.0.0-20230323212658-478b75c54725
@@ -63,7 +63,7 @@ require (
 	github.com/blevesearch/zapx/v15 v15.3.9 // indirect
 	github.com/bytedance/sonic v1.8.6 // indirect
 	github.com/cenkalti/backoff/v3 v3.2.2 // indirect
-	github.com/cenkalti/backoff/v4 v4.2.0 // indirect
+	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -100,8 +100,8 @@ require (
 	github.com/ugorji/go/codec v1.2.11 // indirect
 	github.com/uptrace/opentelemetry-go-extra/otelutil v0.1.21 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.14.0 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/otlpmetric v0.37.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.15.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric v0.38.0 // indirect
 	go.opentelemetry.io/proto/otlp v0.19.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
@@ -109,7 +109,7 @@ require (
 	golang.org/x/crypto v0.7.0 // indirect
 	golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 // indirect
 	golang.org/x/net v0.8.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/tools v0.7.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
