@@ -356,10 +356,10 @@ github.com/ugorji/go v1.2.7/go.mod h1:nF9osbDWLy6bDVv/Rtoh6QgnvNDpmCalQV5urGCCS6
 github.com/ugorji/go/codec v1.2.7/go.mod h1:WGN1fab3R1fzQlVQTkfxVtIBhWDRqOviHU95kRgeqEY=
 github.com/ugorji/go/codec v1.2.11 h1:BMaWp1Bb6fHwEtbplGBGJ498wD+LKlNSl25MjdZY4dU=
 github.com/ugorji/go/codec v1.2.11/go.mod h1:UNopzCgEMSXjBc6AOMqYvWC1ktqTAfzJZUZgYf6w6lg=
-github.com/uptrace/opentelemetry-go-extra/otelutil v0.1.21 h1:HCqo51kNF8wxDMDhxcN5S6DlfZXigMtptRpkvjBCeVc=
-github.com/uptrace/opentelemetry-go-extra/otelutil v0.1.21/go.mod h1:2MNqrUmDrt5E0glMuoJI/9FyGVpBKo1FqjSH60UOZFg=
-github.com/uptrace/opentelemetry-go-extra/otelzap v0.1.21 h1:8G8tCq3sglpyXoQtdaGpHGdcgzTbye6f2JYd5GTFqF4=
-github.com/uptrace/opentelemetry-go-extra/otelzap v0.1.21/go.mod h1:Q17M+LgyEMFPqANTUDxvHbJe796IhNA25s2ORsc3oTA=
+github.com/uptrace/opentelemetry-go-extra/otelutil v0.2.0 h1:Y0fGBHZ66s0sl0aweB8Q3atCSpXLEYRBYf4fRi8IePY=
+github.com/uptrace/opentelemetry-go-extra/otelutil v0.2.0/go.mod h1:GJdf0lFprZyBTx5O4EHPxitezZ6UvBrJFLIBDZEdHto=
+github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0 h1:CAb15TI2ADPaJosw0WkjdwN5//SgRm0yPX5BWHbFli0=
+github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0/go.mod h1:VMS9KY2GOd2fb4iaXqeys7pgT29iVSXOrkNLlD1ot1M=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
