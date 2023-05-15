@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/DmitriyVTitov/size v1.5.0
-	github.com/alexliesenfeld/health v0.6.0
+	github.com/alexliesenfeld/health v0.7.0
 	github.com/blevesearch/bleve/v2 v2.3.7
 	github.com/dgraph-io/ristretto v0.1.1
 	github.com/gin-contrib/zap v0.1.0
