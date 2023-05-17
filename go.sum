@@ -43,8 +43,8 @@ github.com/KyleBanks/depth v1.2.1/go.mod h1:jzSb9d0L43HxTQfT+oSA1EEp2q+ne2uh6Xge
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/RoaringBitmap/roaring v0.9.4 h1:ckvZSX5gwCRaJYBNe7syNawCU5oruY9gQmjXlp4riwo=
 github.com/RoaringBitmap/roaring v0.9.4/go.mod h1:icnadbWcNyfEHlYdr+tDlOTih1Bf/h+rzPpv4sbomAA=
-github.com/alexliesenfeld/health v0.6.0 h1:HRBTCgybNSe4lqGEk7nU82c3bjwh9W+3b46W6UvD4CQ=
-github.com/alexliesenfeld/health v0.6.0/go.mod h1:N4NDIeQtlWumG+6z1ne1v62eQxktz5ylEgGgH9emdMw=
+github.com/alexliesenfeld/health v0.7.0 h1:U3mSZ3ussRbGx+/rXBjNVxjLX5cKaNh8Ly9Hx3q+yfY=
+github.com/alexliesenfeld/health v0.7.0/go.mod h1:6Nnjbu7vBYHoZqIuZeOnTpnW7OH14ulR+wIBE2QuJ8I=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 h1:zV3ejI06GQ59hwDQAvmK1qxOQGB3WuVTRoY0okPTAv0=
 github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496/go.mod h1:oGkLhpf+kjZl6xBf758TQhh5XrAeiJv/7FRz/2spLIg=
