@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/DmitriyVTitov/size v1.5.0
 	github.com/alexliesenfeld/health v0.7.0
-	github.com/blevesearch/bleve/v2 v2.3.7
+	github.com/blevesearch/bleve/v2 v2.3.8
 	github.com/dgraph-io/ristretto v0.1.1
 	github.com/gin-contrib/zap v0.1.0
 	github.com/gin-gonic/gin v1.9.0
@@ -60,7 +60,7 @@ require (
 	github.com/blevesearch/zapx/v12 v12.3.7 // indirect
 	github.com/blevesearch/zapx/v13 v13.3.7 // indirect
 	github.com/blevesearch/zapx/v14 v14.3.7 // indirect
-	github.com/blevesearch/zapx/v15 v15.3.9 // indirect
+	github.com/blevesearch/zapx/v15 v15.3.10 // indirect
 	github.com/bytedance/sonic v1.8.6 // indirect
 	github.com/cenkalti/backoff/v3 v3.2.2 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
