@@ -19,7 +19,7 @@ require (
 	github.com/magefile/mage v1.14.0
 	github.com/mercari/go-circuitbreaker v0.0.2
 	github.com/samber/lo v1.38.1
-	github.com/stretchr/testify v1.8.3
+	github.com/stretchr/testify v1.8.4
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
 	github.com/uptrace/opentelemetry-go-extra/otelzap v0.2.0
